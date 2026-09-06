@@ -86,8 +86,8 @@ window.DEFAULT_RESUME = {
       link: "https://github.com/usnaveen/TubeFocus-Extension",
       linkLabel: "GitHub",
       bullets: [
-        "Rebuilding Gatekeeper scoring as an **on-device** fine-tuned **MiniLM/SetFit ONNX** model via **Transformers.js + WebGPU** (WASM fallback) so relevance scores need **no Gemini API** call",
-        "Manifest V3 **Shadow DOM** YouTube overlays; cloud reserved for optional deep audit/coach, with **confidence-based hybrid routing** and an offline local-vs-Gemini eval harness",
+        "Shipped **local-first Gatekeeper** scoring in MV3 via **Transformers.js** (**all-MiniLM-L6-v2**, **WebGPU→WASM**) with **confidence hybrid routing** — Cloud Run/Gemini only on low confidence or audit/coach; **offline mode** never hits the API",
+        "Added **SetFit MiniLM → ONNX (INT8)** train/export pipeline plus an **offline eval harness** (local-vs-Gemini agreement, latency, route simulation) for on-device relevance",
       ],
     },
     {
