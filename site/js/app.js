@@ -1,4 +1,4 @@
-const STORAGE_KEY = "naveen-resume-v2";
+const STORAGE_KEY = "naveen-resume-v3";
 
 const state = {
   data: null,
@@ -114,6 +114,7 @@ function headerHTML() {
         <div class="name-row">
           <div class="name">${ce("name")}</div>
           <div class="roll">${ce("roll")}</div>
+          <div class="roll">${ce("pr")}</div>
         </div>
         <div class="institute">${ce("institute")}</div>
         <div class="contact">

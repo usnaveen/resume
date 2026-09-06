@@ -1,6 +1,7 @@
 window.DEFAULT_RESUME = {
   name: "NAVEEN US",
   roll: "DA25M020",
+  pr: "PR/12/DA/26/020",
   institute: "INDIAN INSTITUTE OF TECHNOLOGY MADRAS",
   github: "https://github.com/usnaveen",
   githubLabel: "GitHub",
@@ -34,6 +35,7 @@ window.DEFAULT_RESUME = {
   ],
   scholastic: [
     "Secured **All India Rank 134 (Top 0.23%)** in GATE Data Science and Artificial Intelligence 2025",
+    "**Runner-up, Extension Mania (Mar'24)** — YouTube productivity monitor using the OpenAI API",
   ],
   experience: [
     {
@@ -41,16 +43,18 @@ window.DEFAULT_RESUME = {
       role: "Generative AI Intern",
       dates: "Aug'26 – Present",
       bullets: [
-        "Building an **agentic SLM¹ framework** with **MCP² tools** to detect, diagnose, and remediate **multimodal drift** across enterprise AI pipelines",
+        "Developing an **agentic SLM¹** with **MCP²** access to monitoring, data, and model tools for **multimodal drift** detection",
+        "Extending drift monitoring from alert-only dashboards to **agent-triggered diagnosis and remediation**",
       ],
     },
     {
-      org: "Expedia, Bangalore",
+      org: "Expedia Group, Bangalore",
       role: "Machine Learning Science Intern",
       dates: "Jun'26 – Jul'26",
       bullets: [
-        "Implemented and benchmarked **cold-start strategies** for **insurance product recommendation** on production data",
-        "Built **agentic workflows** to research, implement, and evaluate methods; proposed a **day-one handoff** for new insurance products",
+        "Benchmarked **8 day-zero strategies** for cold-starting a product head in a discrete-treatment **TARNet⁴**",
+        "Cut day-zero attach error from **0.083 to 0.0019** at **0.655 ROC-AUC⁵** via same-market score transfer",
+        "Designed an **anchor-centered Bayesian updater** that learns one scalar intercept, not a full product head",
       ],
     },
     {
@@ -58,8 +62,8 @@ window.DEFAULT_RESUME = {
       role: "Software Developer Intern",
       dates: "Jan'24 – Jun'24",
       bullets: [
-        "Developed and optimized **AUTOSAR⁴-compliant ECU⁵ software** for BMW vehicles",
-        "Implemented a custom **std::map-based FsVectorMap** container, reducing **ECU⁵ memory usage**",
+        "Developed and optimised **AUTOSAR⁶-compliant ECU⁷ software** for BMW vehicles in **C++**",
+        "Implemented a custom **std::map-based FsVectorMap** container, cutting **ECU memory usage** on BMW builds",
       ],
     },
   ],
@@ -72,7 +76,7 @@ window.DEFAULT_RESUME = {
       linkLabel: "GitHub",
       bullets: [
         "Built an open **chart-VQA stress harness** measuring **proxy–true divergence** under evidence and judge-bait attacks, with **executable oracles** and dual **invariance / re-answer** protocols",
-        "Implements **RHR / blind-spot** metrics and an **MLX** runner for local VLMs; framed for genAI reliability research (audit numbers filled after real runs)",
+        "Implements **RHR / blind-spot** metrics and an **MLX** runner for local VLMs; framed for genAI reliability research",
       ],
     },
     {
@@ -82,8 +86,8 @@ window.DEFAULT_RESUME = {
       link: "https://github.com/usnaveen/TubeFocus-Extension",
       linkLabel: "GitHub",
       bullets: [
-        "Built a **3-agent LangGraph** system (Librarian, Navigator, Coach) on **Gemini 2.0 Flash** that analyzes video context and triggers UI interventions in **<400ms**",
-        "Implemented **RAG³** over watch-history transcripts in **Firestore Vector Search**; Manifest V3 extension uses **Shadow DOM** to blur/highlight YouTube by semantic relevance without **CSP⁶** violations",
+        "Built a **3-agent LangGraph** system (Librarian, Navigator, Coach) on **Gemini 2.0 Flash** with UI interventions in **<400ms**",
+        "Implemented **RAG³** over watch-history transcripts in **Firestore Vector Search**; **Shadow DOM** extension avoids **CSP⁸** violations",
       ],
     },
     {
@@ -93,8 +97,8 @@ window.DEFAULT_RESUME = {
       link: "https://github.com/usnaveen/GraphRecall",
       linkLabel: "GitHub",
       bullets: [
-        "Orchestrated **7+ LangGraph agents** (Supervisor + ReAct) that turn unstructured notes into an interactive **3D knowledge graph** with spaced repetition",
-        "Engineered **GraphRAG⁷** over **Neo4j + pgvector** with checkpointers, map-reduce, and **human-in-the-loop** concept validation to ground LLM answers via **multi-hop reasoning**",
+        "Orchestrated **7+ LangGraph agents** (Supervisor + ReAct⁹) that turn unstructured notes into an interactive **3D knowledge graph**",
+        "Engineered **GraphRAG** over **Neo4j + pgvector** with checkpointers, map-reduce, and **human-in-the-loop** concept validation",
       ],
     },
     {
@@ -104,8 +108,8 @@ window.DEFAULT_RESUME = {
       link: "https://github.com/usnaveen/navi-translator",
       linkLabel: "GitHub",
       bullets: [
-        "Shipped end-to-end **Na'vi→English** translation: fine-tuned **MarianMT** + **Whisper-LoRA** ASR with dictionary fallback for low-resource speech/text",
-        "Full **MLOps** path: **DVC**, **MLflow** registry, FastAPI serving, Docker Compose, Prometheus/Grafana, Airflow retraining DAGs, and GitHub Actions CI",
+        "Shipped end-to-end **Na'vi→English** translation: fine-tuned **MarianMT** + **Whisper-LoRA** ASR with dictionary fallback",
+        "Full **MLOps** path: **DVC**, **MLflow**, FastAPI, Docker Compose, Prometheus/Grafana, Airflow DAGs, and GitHub Actions CI",
       ],
     },
     {
@@ -115,8 +119,8 @@ window.DEFAULT_RESUME = {
       link: "https://github.com/usnaveen/DA5401-EndSem-Challenge",
       linkLabel: "GitHub",
       bullets: [
-        "Predicted metric fitness scores for **multilingual LLM responses** using **multilingual-e5-large** embeddings with a **LightGBM/XGBoost** ensemble",
-        "Mitigated train–test score shift via synthetic negatives and **quantile calibration**; achieved **RMSE 0.82** (**17.2%** vs mean baseline)",
+        "Predicted metric fitness scores for **multilingual LLM responses** using **multilingual-e5-large** with a **LightGBM/XGBoost** ensemble",
+        "Mitigated train–test score shift via synthetic negatives and **quantile calibration**; **RMSE 0.82** (**17.2%** vs mean baseline)",
       ],
     },
     {
@@ -126,8 +130,8 @@ window.DEFAULT_RESUME = {
       link: "https://github.com/usnaveen/deeplearning_assignment3",
       linkLabel: "GitHub",
       bullets: [
-        "Implemented a **from-scratch Transformer** (Attention Is All You Need) in PyTorch for Multi30k **DE→EN**, with Noam schedule, label smoothing, and BLEU evaluation",
-        "Built a **shared VGG11-BN multitask** Pets model: classification (**F1 ≥ 0.93**), localization (**Acc@IoU0.5 ≥ 91%**), segmentation (**Dice ≥ 0.82**), tracked in **W&B**",
+        "Implemented a **from-scratch Transformer** in PyTorch for Multi30k **DE→EN**, with Noam schedule, label smoothing, and BLEU",
+        "Built a **shared VGG11-BN multitask** Pets model: classification (**F1 ≥ 0.93**), localization (**Acc@IoU0.5 ≥ 91%**), segmentation (**Dice ≥ 0.82**)",
       ],
     },
   ],
@@ -139,7 +143,7 @@ window.DEFAULT_RESUME = {
   por: [
     {
       title: "Deputy Placement Coordinator",
-      org: "Placement & Internship Cell, DSAI, IIT Madras",
+      org: "Academic Affairs Secretary, Placement & Internship Cell, DSAI, IIT Madras",
       dates: "Aug'25 – Present",
       bullets: [
         "Handled industry outreach, campus logistics, and **end-to-end recruitment**; built workflows to streamline placement operations",
@@ -150,33 +154,42 @@ window.DEFAULT_RESUME = {
       org: "Amrita Vishwa Vidyapeetham",
       dates: "Oct'23 & Oct'24",
       bullets: [
-        "Led the annual cultural fest; won **Best Decoration**; department finished **Runner-up (2023)** and **Winner (2024)** overall",
+        "Led the department contingent across two editions; won **Best Decoration**; **Runner-up (2023)** and **Winner (2024)** overall",
       ],
     },
   ],
   courses: [
-    "Linear Algebra",
-    "Probability & Statistics",
-    "Machine Learning",
-    "Deep Learning",
-    "Artificial Intelligence",
+    "Linear Algebra, Probability & Statistics",
+    "Machine Learning & Deep Learning",
     "Data Analytics Lab",
+    "MLOps",
+    "Natural Language Processing",
+    "Modern Computer Vision",
+    "Data Science for Finance",
+    "Artificial Intelligence",
   ],
   skills: [
-    { category: "Languages", items: "Python, SQL, C, JavaScript/TypeScript" },
+    { category: "Languages", items: "Python, SQL, C, C++, JavaScript" },
     {
-      category: "Generative AI",
-      items: "LangChain, LangGraph, PyTorch, Hugging Face, RAG³, MCP²",
+      category: "GenAI & Agentic",
+      items: "LangChain, LangGraph, RAG³, MCP², HuggingFace",
     },
     {
-      category: "Backend & Cloud",
-      items: "FastAPI, Docker, GCP (Cloud Run, Vertex AI), PostgreSQL (pgvector), Neo4j, Git, LangSmith",
+      category: "ML & DL",
+      items: "PyTorch, scikit-learn, NumPy / Pandas, Matplotlib, Gemini / OpenAI",
+    },
+    {
+      category: "Backend & Data",
+      items: "FastAPI, PostgreSQL (pgvector), Neo4j, ChromaDB / Redis, Firestore",
+    },
+    {
+      category: "Cloud & Tooling",
+      items: "Docker, Google Cloud Run, Vertex AI, Git / GitHub, LangSmith",
     },
   ],
   extras: [
-    "**Runner-up, Extension Mania (Mar'24)** — YouTube productivity monitor using the OpenAI API",
     "School **swimming team (5 years, 15+ medals)**; school and college **cricket** at district and state level",
   ],
   footnotes:
-    "SLM¹: Small Language Model | MCP²: Model Context Protocol | RAG³: Retrieval-Augmented Generation | AUTOSAR⁴: Automotive Open System Architecture | ECU⁵: Electronic Control Unit | CSP⁶: Content Security Policy | GraphRAG⁷: Graph RAG",
+    "SLM¹: Small Language Model | MCP²: Model Context Protocol | RAG³: Retrieval-Augmented Generation | TARNet⁴: Treatment-Agnostic Representation Network | ROC-AUC⁵: Area Under the Receiver Operating Characteristic Curve | AUTOSAR⁶: Automotive Open System Architecture | ECU⁷: Electronic Control Unit | CSP⁸: Content Security Policy | ReAct⁹: Reasoning and Acting",
 };
