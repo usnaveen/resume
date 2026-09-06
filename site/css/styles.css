@@ -340,8 +340,39 @@ table.resume td {
 .edu-score,
 .edu-year { vertical-align: middle; }
 
+/* Fixed table layout resolves widths from the first row, which is a full-width
+   section bar — so column widths have to come from the colgroup. */
+.c-lab  { width: 19%; }
+.c-course { width: 2.6%; }
+
+.course-banner {
+  background: var(--tint) !important;
+  vertical-align: middle;
+  text-align: center;
+  padding: 2px 0 !important;
+  border-right: 1px solid var(--line);
+}
+
+.course-banner-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 700;
+  font-size: var(--fs-lab);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  color: var(--navy-deep);
+  line-height: 1.1;
+}
+
+.projects-table .lab[colspan="2"] {
+  width: auto;
+}
+
+.c-prog { width: 32%; }
+.c-inst { width: 32%; }
+.c-num  { width: 18%; }
+
 .lab {
-  width: 20.5%;
   text-align: center;
   background: var(--tint);
   font-weight: 700;
@@ -367,6 +398,13 @@ table.resume td {
 }
 
 .lab a:hover { text-decoration: underline; }
+
+.summary {
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.25;
+  margin: 0 0 1.2px 0;
+}
 
 .bullets {
   margin: 0;

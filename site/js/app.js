@@ -1,4 +1,4 @@
-const STORAGE_KEY = "naveen-resume-v3";
+const STORAGE_KEY = "naveen-resume-v5";
 
 const state = {
   data: null,
@@ -12,7 +12,11 @@ function clone(obj) {
 function load() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (!parsed.courseProjects) parsed.courseProjects = clone(window.DEFAULT_RESUME.courseProjects || []);
+      return parsed;
+    }
   } catch (_) {
     /* ignore */
   }
@@ -149,6 +153,7 @@ function educationHTML() {
   return `
     <section class="block">
       <table class="resume">
+        <colgroup><col class="c-prog"><col class="c-inst"><col class="c-num"><col class="c-num"></colgroup>
         <tr><td class="sec" colspan="4">Education and Scholastic Achievements</td></tr>
         <tr class="cols">
           <th>Program</th><th>Institute</th><th>% / CGPA</th><th>Year</th>
@@ -176,10 +181,15 @@ function labeledBlock(title, kind, items, labelFn, extraBtn) {
           </li>`
         )
         .join("");
+      const summary =
+        item.summary == null
+          ? ""
+          : `<div class="summary">${ceMd(`${kind}.${i}.summary`)}</div>`;
       return `
         <tr class="item">
           <td class="lab">${labelFn(i)}${actions(kind, i)}</td>
           <td>
+            ${summary}
             <ul class="bullets">${bullets}</ul>
             ${addBtn(`${kind}-bullet:${i}`, "Add bullet")}
           </td>
@@ -190,6 +200,7 @@ function labeledBlock(title, kind, items, labelFn, extraBtn) {
   return `
     <section class="block">
       <table class="resume">
+        <colgroup><col class="c-lab"><col></colgroup>
         <tr><td class="sec" colspan="2">${title}</td></tr>
         ${rows}
       </table>
@@ -210,29 +221,86 @@ function experienceHTML() {
   );
 }
 
+function projectLabelHTML(kind, i) {
+  const item = state.data[kind][i];
+  const link = state.editing
+    ? `<span class="sub">${ce(`${kind}.${i}.linkLabel`)}</span>`
+    : `<a href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.linkLabel)}</a>`;
+  return `
+    ${ce(`${kind}.${i}.title`)}
+    <span class="sub">${ce(`${kind}.${i}.subtitle`)}</span>
+    <span class="dates">(${ce(`${kind}.${i}.dates`)})</span>
+    ${link}`;
+}
+
+function projectBodyHTML(kind, i) {
+  const item = state.data[kind][i];
+  const bullets = item.bullets
+    .map(
+      (b, j) => `
+      <li class="item">${ceMd(`${kind}.${i}.bullets.${j}`)}
+        ${actions(`${kind}-bullet:${i}`, j)}
+      </li>`
+    )
+    .join("");
+  const summary =
+    item.summary == null
+      ? ""
+      : `<div class="summary">${ceMd(`${kind}.${i}.summary`)}</div>`;
+  return `
+    ${summary}
+    <ul class="bullets">${bullets}</ul>
+    ${addBtn(`${kind}-bullet:${i}`, "Add bullet")}`;
+}
+
 function projectsHTML() {
-  return labeledBlock(
-    "Projects",
-    "projects",
-    state.data.projects,
-    (i) => {
-      const link = state.editing
-        ? `<span class="sub">${ce(`projects.${i}.linkLabel`)}</span>`
-        : `<a href="${escapeHtml(state.data.projects[i].link)}" target="_blank" rel="noopener">${escapeHtml(state.data.projects[i].linkLabel)}</a>`;
+  if (!state.data.courseProjects) state.data.courseProjects = [];
+
+  const personal = state.data.projects
+    .map(
+      (item, i) => `
+      <tr class="item">
+        <td class="lab" colspan="2">${projectLabelHTML("projects", i)}${actions("projects", i)}</td>
+        <td>${projectBodyHTML("projects", i)}</td>
+      </tr>`
+    )
+    .join("");
+
+  const course = state.data.courseProjects;
+  const n = course.length;
+  const courseRows = course
+    .map((item, i) => {
+      const banner =
+        i === 0
+          ? `<td class="course-banner" rowspan="${Math.max(n, 1)}"><div class="course-banner-text">Course Projects</div></td>`
+          : "";
       return `
-        ${ce(`projects.${i}.title`)}
-        <span class="sub">${ce(`projects.${i}.subtitle`)}</span>
-        <span class="dates">(${ce(`projects.${i}.dates`)})</span>
-        ${link}`;
-    },
-    "Add project"
-  );
+      <tr class="item course-row">
+        ${banner}
+        <td class="lab">${projectLabelHTML("courseProjects", i)}${actions("courseProjects", i)}</td>
+        <td>${projectBodyHTML("courseProjects", i)}</td>
+      </tr>`;
+    })
+    .join("");
+
+  return `
+    <section class="block">
+      <table class="resume projects-table">
+        <colgroup><col class="c-course"><col class="c-lab"><col></colgroup>
+        <tr><td class="sec" colspan="3">Projects</td></tr>
+        ${personal}
+        ${courseRows}
+      </table>
+      ${addBtn("projects", "Add project")}
+      ${addBtn("courseProjects", "Add course project")}
+    </section>`;
 }
 
 function publicationHTML() {
   return `
     <section class="block">
       <table class="resume">
+        <colgroup><col class="c-lab"><col></colgroup>
         <tr><td class="sec" colspan="2">Publication</td></tr>
         <tr>
           <td class="lab">
@@ -413,18 +481,32 @@ function blankOf(kind) {
     case "scholastic":
       return "New scholastic achievement";
     case "experience":
-      return { org: "Company, City", role: "Role", dates: "Mon'YY – Mon'YY", bullets: ["Impact with a metric"] };
+      return {
+        org: "Company, City",
+        role: "Role",
+        dates: "Mon'YY – Mon'YY",
+        summary: "One-line summary of the project",
+        bullets: ["Impact with a metric"],
+      };
     case "projects":
+    case "courseProjects":
       return {
         title: "Project",
         subtitle: "Subtitle",
         dates: "Mon'YY – Present",
         link: "https://github.com/usnaveen",
         linkLabel: "GitHub",
+        summary: "One-line summary of the project",
         bullets: ["What you built and why it matters"],
       };
     case "por":
-      return { title: "Role", org: "Organization", dates: "Mon'YY – Mon'YY", bullets: ["What you owned"] };
+      return {
+        title: "Role",
+        org: "Organization",
+        dates: "Mon'YY – Mon'YY",
+        summary: "One-line summary of the role",
+        bullets: ["What you owned"],
+      };
     case "courses":
       return "New course";
     case "skills":
@@ -437,7 +519,7 @@ function blankOf(kind) {
 }
 
 function onAdd(kind) {
-  const bulletMatch = kind.match(/^(experience|projects|por)-bullet:(\d+)$/);
+  const bulletMatch = kind.match(/^(experience|projects|courseProjects|por)-bullet:(\d+)$/);
   if (bulletMatch) {
     const [, section, idx] = bulletMatch;
     state.data[section][Number(idx)].bullets.push("New bullet");
@@ -453,7 +535,7 @@ function onAdd(kind) {
 }
 
 function onRemove(kind, index) {
-  const bulletMatch = kind.match(/^(experience|projects|por)-bullet:(\d+)$/);
+  const bulletMatch = kind.match(/^(experience|projects|courseProjects|por)-bullet:(\d+)$/);
   if (bulletMatch) {
     const [, section, idx] = bulletMatch;
     const list = state.data[section][Number(idx)].bullets;

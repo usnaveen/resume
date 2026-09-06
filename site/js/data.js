@@ -43,8 +43,7 @@ window.DEFAULT_RESUME = {
       role: "Generative AI Intern",
       dates: "Aug'26 – Present",
       bullets: [
-        "Developing an **agentic SLM¹** with **MCP²** access to monitoring, data, and model tools for **multimodal drift** detection",
-        "Extending drift monitoring from alert-only dashboards to **agent-triggered diagnosis and remediation**",
+        "Building an **agentic SLM¹** with **MCP²** tool access for **multimodal drift** monitoring (ongoing)",
       ],
     },
     {
@@ -63,7 +62,7 @@ window.DEFAULT_RESUME = {
       dates: "Jan'24 – Jun'24",
       bullets: [
         "Developed and optimised **AUTOSAR⁶-compliant ECU⁷ software** for BMW vehicles in **C++**",
-        "Implemented a custom **std::map-based FsVectorMap** container, cutting **ECU memory usage** on BMW builds",
+        "Implemented a custom **std::map-based FsVectorMap** container used on BMW ECU builds",
       ],
     },
   ],
@@ -74,9 +73,10 @@ window.DEFAULT_RESUME = {
       dates: "Sep'26 – Present",
       link: "https://github.com/usnaveen/multimodal-reward-hacking-auditor",
       linkLabel: "GitHub",
+      summary: "**Chart-VQA stress harness** for measuring **proxy–true divergence** under evidence and judge-bait attacks",
       bullets: [
-        "Built an open **chart-VQA stress harness** measuring **proxy–true divergence** under evidence and judge-bait attacks, with **executable oracles** and dual **invariance / re-answer** protocols",
-        "Implements **RHR / blind-spot** metrics and an **MLX** runner for local VLMs; framed for genAI reliability research",
+        "Executable chart oracles with dual **invariance / re-answer** protocols; attack families include evidence swap/destroy, wrong caption, judge bait, and nuisance",
+        "**RHR / blind-spot / NRFR** scaffolding plus an **MLX** runner for local VLMs — framed for genAI reliability research",
       ],
     },
     {
@@ -85,9 +85,10 @@ window.DEFAULT_RESUME = {
       dates: "Jul'25 – Present",
       link: "https://github.com/usnaveen/TubeFocus-Extension",
       linkLabel: "GitHub",
+      summary: "**Local-first Gatekeeper** scoring with **Transformers.js** and confidence-gated cloud fallback",
       bullets: [
-        "Shipped **local-first Gatekeeper** scoring in MV3 via **Transformers.js** (**all-MiniLM-L6-v2**, **WebGPU→WASM**) with **confidence hybrid routing** — Cloud Run/Gemini only on low confidence or audit/coach; **offline mode** never hits the API",
-        "Added **SetFit MiniLM → ONNX (INT8)** train/export pipeline plus an **offline eval harness** (local-vs-Gemini agreement, latency, route simulation) for on-device relevance",
+        "On-device **all-MiniLM-L6-v2** via **WebGPU→WASM**; Cloud Run/Gemini only on low confidence or audit/coach; **offline mode** never hits the API",
+        "**SetFit → ONNX (INT8)** train/export pipeline plus an offline eval harness (local-vs-Gemini agreement, latency, route simulation)",
       ],
     },
     {
@@ -96,20 +97,24 @@ window.DEFAULT_RESUME = {
       dates: "Jan'26 – Present",
       link: "https://github.com/usnaveen/GraphRecall",
       linkLabel: "GitHub",
+      summary: "Notes → **Neo4j** knowledge graph with spaced-repetition feed and **GraphRAG** chat",
       bullets: [
-        "Orchestrated **7+ LangGraph agents** (Supervisor + ReAct⁹) that turn unstructured notes into an interactive **3D knowledge graph**",
-        "Engineered **GraphRAG** over **Neo4j + pgvector** with checkpointers, map-reduce, and **human-in-the-loop** concept validation",
+        "LangGraph ingestion with **HITL** concept approval, conflict synthesis, and SM-2 active-recall cards",
+        "Hybrid retrieval over **Neo4j** traversal + **pgvector**, with checkpointers and source-cited streaming answers",
       ],
     },
+  ],
+  courseProjects: [
     {
       title: "Na'vi Translator",
-      subtitle: "Low-Resource MLOps",
+      subtitle: "MLOps · Low-Resource MT/ASR",
       dates: "Apr'26",
       link: "https://github.com/usnaveen/navi-translator",
       linkLabel: "GitHub",
+      summary: "End-to-end **Na'vi→English** translator under low-resource data constraints",
       bullets: [
-        "Shipped end-to-end **Na'vi→English** translation: fine-tuned **MarianMT** + **Whisper-LoRA** ASR with dictionary fallback",
-        "Full **MLOps** path: **DVC**, **MLflow**, FastAPI, Docker Compose, Prometheus/Grafana, Airflow DAGs, and GitHub Actions CI",
+        "Fine-tuned **MarianMT** + **Whisper-LoRA** ASR with Reykunyu dictionary fallback when neural confidence is low",
+        "Served production models from an **MLflow** registry behind **FastAPI**; **DVC** data stages, Prometheus/Grafana monitoring, Airflow training DAG, and GitHub Actions CI",
       ],
     },
     {
@@ -118,20 +123,22 @@ window.DEFAULT_RESUME = {
       dates: "Nov'25",
       link: "https://github.com/usnaveen/DA5401-EndSem-Challenge",
       linkLabel: "GitHub",
+      summary: "Predict fitness scores for **multilingual LLM** responses under train–test score shift",
       bullets: [
-        "Predicted metric fitness scores for **multilingual LLM responses** using **multilingual-e5-large** with a **LightGBM/XGBoost** ensemble",
-        "Mitigated train–test score shift via synthetic negatives and **quantile calibration**; **RMSE 0.82** (**17.2%** vs mean baseline)",
+        "**multilingual-e5-large** embeddings with interaction features into a **LightGBM/XGBoost** ensemble",
+        "Synthetic negatives + **quantile calibration** to close distribution shift; **RMSE 0.82** (**17.2%** vs mean baseline)",
       ],
     },
     {
       title: "Deep Learning Systems",
-      subtitle: "From-Scratch Transformer + Multitask CV",
+      subtitle: "DA6401 · Transformer + Multitask CV",
       dates: "2026",
       link: "https://github.com/usnaveen/deeplearning_assignment3",
       linkLabel: "GitHub",
+      summary: "From-scratch **Transformer** MT and shared-backbone **multitask** vision",
       bullets: [
-        "Implemented a **from-scratch Transformer** in PyTorch for Multi30k **DE→EN**, with Noam schedule, label smoothing, and BLEU",
-        "Built a **shared VGG11-BN multitask** Pets model: classification (**F1 ≥ 0.93**), localization (**Acc@IoU0.5 ≥ 91%**), segmentation (**Dice ≥ 0.82**)",
+        "Implemented **Attention Is All You Need** in PyTorch for Multi30k **DE→EN** (Noam schedule, label smoothing, BLEU)",
+        "Shared **VGG11-BN** Pets model: classification (**F1 ≥ 0.93**), localization (**Acc@IoU0.5 ≥ 91%**), segmentation (**Dice ≥ 0.82**)",
       ],
     },
   ],
@@ -191,5 +198,5 @@ window.DEFAULT_RESUME = {
     "School **swimming team (5 years, 15+ medals)**; school and college **cricket** at district and state level",
   ],
   footnotes:
-    "SLM¹: Small Language Model | MCP²: Model Context Protocol | RAG³: Retrieval-Augmented Generation | TARNet⁴: Treatment-Agnostic Representation Network | ROC-AUC⁵: Area Under the Receiver Operating Characteristic Curve | AUTOSAR⁶: Automotive Open System Architecture | ECU⁷: Electronic Control Unit | CSP⁸: Content Security Policy | ReAct⁹: Reasoning and Acting",
+    "SLM¹: Small Language Model | MCP²: Model Context Protocol | RAG³: Retrieval-Augmented Generation | TARNet⁴: Treatment-Agnostic Representation Network | ROC-AUC⁵: Area Under the Receiver Operating Characteristic Curve | AUTOSAR⁶: Automotive Open System Architecture | ECU⁷: Electronic Control Unit | ReAct⁸: Reasoning and Acting",
 };
