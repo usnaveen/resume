@@ -81,13 +81,13 @@ window.DEFAULT_RESUME = {
     },
     {
       title: "TubeFocus",
-      subtitle: "Chrome Extension",
+      subtitle: "On-Device Relevance · Chrome Extension",
       dates: "Jul'25 – Present",
       link: "https://github.com/usnaveen/TubeFocus-Extension",
       linkLabel: "GitHub",
       bullets: [
-        "Built a **3-agent LangGraph** system (Librarian, Navigator, Coach) on **Gemini 2.0 Flash** with UI interventions in **<400ms**",
-        "Implemented **RAG³** over watch-history transcripts in **Firestore Vector Search**; **Shadow DOM** extension avoids **CSP⁸** violations",
+        "Rebuilding Gatekeeper scoring as an **on-device** fine-tuned **MiniLM/SetFit ONNX** model via **Transformers.js + WebGPU** (WASM fallback) so relevance scores need **no Gemini API** call",
+        "Manifest V3 **Shadow DOM** YouTube overlays; cloud reserved for optional deep audit/coach, with **confidence-based hybrid routing** and an offline local-vs-Gemini eval harness",
       ],
     },
     {
