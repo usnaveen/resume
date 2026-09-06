@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NAVEEN US — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="toolbar no-print">
+    <div class="brand">
+      <strong>RESUME</strong>
+      <span>IIT Madras 2026-27 template</span>
+    </div>
+    <div class="seg" role="tablist" aria-label="Mode">
+      <button type="button" id="btn-view" class="active">View</button>
+      <button type="button" id="btn-edit">Edit</button>
+    </div>
+    <span id="fit-badge" class="badge">Measuring…</span>
+    <span id="edit-hint" class="hint" hidden>Click any field to edit. Ctrl/⌘+B bolds a bullet. Changes save in this browser.</span>
+    <div class="spacer"></div>
+    <button type="button" class="btn primary" id="btn-print" title="Print or save as PDF">Print</button>
+    <button type="button" class="btn" id="btn-export">Export JSON</button>
+    <label class="btn" for="btn-import">Import JSON</label>
+    <input id="btn-import" type="file" accept="application/json" hidden>
+    <button type="button" class="btn danger" id="btn-reset">Reset</button>
+  </header>
+
+  <main class="stage">
+    <div class="sheet-wrap">
+      <article class="sheet" id="sheet" aria-label="Resume"></article>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
