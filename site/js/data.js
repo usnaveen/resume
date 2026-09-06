@@ -42,8 +42,10 @@ window.DEFAULT_RESUME = {
       org: "Walmart, Bangalore",
       role: "Generative AI Intern",
       dates: "Aug'26 – Present",
+      summary: "Agentic **SLM¹** framework for autonomous **multimodal drift** detection and remediation",
       bullets: [
-        "Building an **agentic SLM¹** with **MCP²** tool access for **multimodal drift** monitoring (ongoing)",
+        "Developing an agentic Small Language Model with **MCP²** access to monitoring, data and model tools",
+        "Extending drift monitoring from alert-only dashboards to agent-triggered diagnosis and remediation",
       ],
     },
     {
@@ -62,7 +64,7 @@ window.DEFAULT_RESUME = {
       dates: "Jan'24 – Jun'24",
       bullets: [
         "Developed and optimised **AUTOSAR⁶-compliant ECU⁷ software** for BMW vehicles in **C++**",
-        "Implemented a custom **std::map-based FsVectorMap** container used on BMW ECU builds",
+        "Implemented a custom **std::map-based FsVectorMap** container, cutting ECU memory usage on BMW builds",
       ],
     },
   ],
@@ -81,7 +83,7 @@ window.DEFAULT_RESUME = {
     },
     {
       title: "TubeFocus",
-      subtitle: "On-Device Relevance · Chrome Extension",
+      subtitle: "Chrome Extension",
       dates: "Jul'25 – Present",
       link: "https://github.com/usnaveen/TubeFocus-Extension",
       linkLabel: "GitHub",

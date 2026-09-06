@@ -1,4 +1,4 @@
-const STORAGE_KEY = "naveen-resume-v5";
+const STORAGE_KEY = "naveen-resume-v6";
 
 const state = {
   data: null,
@@ -326,42 +326,44 @@ function porHTML() {
   );
 }
 
-function coursesSkillsHTML() {
+function skillsHTML() {
+  const skills = state.data.skills;
+  let skillRows = "";
+  for (let i = 0; i < skills.length; i++) {
+    skillRows += `<tr class="item">
+      <td class="lab">${ce(`skills.${i}.category`)}${actions("skills", i)}</td>
+      <td class="item">${ce(`skills.${i}.items`)}</td>
+    </tr>`;
+  }
+  return `
+    <section class="block">
+      <table class="resume">
+        <colgroup><col class="c-lab"><col></colgroup>
+        <tr><td class="sec" colspan="2">Skills</td></tr>
+        ${skillRows}
+      </table>
+      ${addBtn("skills", "Add skill row")}
+    </section>`;
+}
+
+function coursesHTML() {
   const courseSpans = state.data.courses
     .map(
       (c, i) =>
         `<span class="item">${ce(`courses.${i}`)}${actions("courses", i)}</span>`
     )
     .join(" · ");
-
-  const skills = state.data.skills;
-  let skillRows = "";
-  for (let i = 0; i < skills.length; i += 2) {
-    const right = skills[i + 1];
-    const leftInner = `<strong>${ce(`skills.${i}.category`)}:</strong> ${ce(`skills.${i}.items`)}${actions("skills", i)}`;
-    if (right) {
-      skillRows += `<tr class="skill-grid">
-        <td class="item">${leftInner}</td>
-        <td class="item"><strong>${ce(`skills.${i + 1}.category`)}:</strong> ${ce(`skills.${i + 1}.items`)}${actions("skills", i + 1)}</td>
-      </tr>`;
-    } else {
-      skillRows += `<tr class="skill-grid"><td class="item" colspan="2">${leftInner}</td></tr>`;
-    }
-  }
-
   return `
     <section class="block">
       <table class="resume">
-        <tr><td class="sec" colspan="2">Coursework and Skills</td></tr>
+        <tr><td class="sec">Courses</td></tr>
         <tr>
-          <td class="note" colspan="2">
-            <strong>Courses:</strong> ${courseSpans}
+          <td class="note">
+            ${courseSpans}
             ${addBtn("courses", "Add course")}
           </td>
         </tr>
-        ${skillRows}
       </table>
-      ${addBtn("skills", "Add skill row")}
     </section>`;
 }
 
@@ -397,11 +399,12 @@ function render() {
   sheet.innerHTML = [
     headerHTML(),
     educationHTML(),
+    skillsHTML(),
+    coursesHTML(),
     experienceHTML(),
     projectsHTML(),
     publicationHTML(),
     porHTML(),
-    coursesSkillsHTML(),
     extrasHTML(),
     footnotesHTML(),
   ].join("");
