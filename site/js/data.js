@@ -65,6 +65,17 @@ window.DEFAULT_RESUME = {
   ],
   projects: [
     {
+      title: "Multimodal Reward-Hacking Auditor",
+      subtitle: "Research Harness",
+      dates: "Sep'26 – Present",
+      link: "https://github.com/usnaveen/multimodal-reward-hacking-auditor",
+      linkLabel: "GitHub",
+      bullets: [
+        "Built an open **chart-VQA stress harness** measuring **proxy–true divergence** under evidence and judge-bait attacks, with **executable oracles** and dual **invariance / re-answer** protocols",
+        "Implements **RHR / blind-spot** metrics and an **MLX** runner for local VLMs; framed for genAI reliability research (audit numbers filled after real runs)",
+      ],
+    },
+    {
       title: "TubeFocus",
       subtitle: "Chrome Extension",
       dates: "Jul'25 – Present",
@@ -84,6 +95,39 @@ window.DEFAULT_RESUME = {
       bullets: [
         "Orchestrated **7+ LangGraph agents** (Supervisor + ReAct) that turn unstructured notes into an interactive **3D knowledge graph** with spaced repetition",
         "Engineered **GraphRAG⁷** over **Neo4j + pgvector** with checkpointers, map-reduce, and **human-in-the-loop** concept validation to ground LLM answers via **multi-hop reasoning**",
+      ],
+    },
+    {
+      title: "Na'vi Translator",
+      subtitle: "Low-Resource MLOps",
+      dates: "Apr'26",
+      link: "https://github.com/usnaveen/navi-translator",
+      linkLabel: "GitHub",
+      bullets: [
+        "Shipped end-to-end **Na'vi→English** translation: fine-tuned **MarianMT** + **Whisper-LoRA** ASR with dictionary fallback for low-resource speech/text",
+        "Full **MLOps** path: **DVC**, **MLflow** registry, FastAPI serving, Docker Compose, Prometheus/Grafana, Airflow retraining DAGs, and GitHub Actions CI",
+      ],
+    },
+    {
+      title: "LLM Response Metric Learning",
+      subtitle: "DA5401 Data Challenge",
+      dates: "Nov'25",
+      link: "https://github.com/usnaveen/DA5401-EndSem-Challenge",
+      linkLabel: "GitHub",
+      bullets: [
+        "Predicted metric fitness scores for **multilingual LLM responses** using **multilingual-e5-large** embeddings with a **LightGBM/XGBoost** ensemble",
+        "Mitigated train–test score shift via synthetic negatives and **quantile calibration**; achieved **RMSE 0.82** (**17.2%** vs mean baseline)",
+      ],
+    },
+    {
+      title: "Deep Learning Systems",
+      subtitle: "From-Scratch Transformer + Multitask CV",
+      dates: "2026",
+      link: "https://github.com/usnaveen/deeplearning_assignment3",
+      linkLabel: "GitHub",
+      bullets: [
+        "Implemented a **from-scratch Transformer** (Attention Is All You Need) in PyTorch for Multi30k **DE→EN**, with Noam schedule, label smoothing, and BLEU evaluation",
+        "Built a **shared VGG11-BN multitask** Pets model: classification (**F1 ≥ 0.93**), localization (**Acc@IoU0.5 ≥ 91%**), segmentation (**Dice ≥ 0.82**), tracked in **W&B**",
       ],
     },
   ],
