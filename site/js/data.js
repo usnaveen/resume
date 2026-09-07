@@ -52,12 +52,13 @@ window.DEFAULT_RESUME = {
       org: "Expedia Group, Bangalore",
       role: "Machine Learning Science Intern",
       dates: "Jun'26 – Jul'26",
+      summary: "Cold-start insurance recommendation with hierarchical Bayes and online intercept updating",
       bullets: [
-        "Benchmarked **8 day-zero strategies** for cold-starting a product head in a discrete-treatment **TARNet⁴**",
-        "Cut day-zero attach error from **0.083 to 0.0019** at **0.655 ROC-AUC⁵** via same-market score transfer",
-        "Designed an **anchor-centered Bayesian updater** that learns one scalar intercept, not a full product head",
+        "Built a **hierarchical Bayesian** model of product-level effects so new insurance products can be scored with **no launch history**",
+        "Designed a **Bayesian updater** that recalibrates overall attach rate from early launch outcomes while keeping the day-zero **customer ranking** fixed",
+        "Validated on a **real cold-start product launch**: cut day-zero attach error from **0.083 to 0.0019** at **0.655 ROC-AUC**; benchmarked against **8** day-zero strategies",
       ],
-    },
+    }
     {
       org: "Valeo, Chennai",
       role: "Software Developer Intern",
