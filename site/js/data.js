@@ -88,12 +88,13 @@ window.DEFAULT_RESUME = {
       dates: "Jul'25 – Present",
       link: "https://github.com/usnaveen/TubeFocus-Extension",
       linkLabel: "GitHub",
-      summary: "**Local-first Gatekeeper** scoring with **Transformers.js** and confidence-gated cloud fallback",
+      summary: "Chrome productivity extension that scores YouTube videos against your learning goal and shows live visual feedback when you're off-track",
       bullets: [
-        "On-device **all-MiniLM-L6-v2** via **WebGPU→WASM**; Cloud Run/Gemini only on low confidence or audit/coach; **offline mode** never hits the API",
-        "**SetFit → ONNX (INT8)** train/export pipeline plus an offline eval harness (local-vs-Gemini agreement, latency, route simulation)",
+        "Built an on-device relevance classifier (**MiniLM** via **Transformers.js**, **WebGPU→WASM**) so scoring works without an API call",
+        "Added confidence-based routing: local scores by default; cloud only when unsure or for deeper coaching; full offline mode available",
+        "Shipped a **SetFit → ONNX** train/export path plus an offline eval harness to compare local vs cloud scores",
       ],
-    },
+    }
     {
       title: "GraphRecall",
       subtitle: "AI Knowledge Management System",

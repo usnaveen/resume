@@ -1,4 +1,4 @@
-const STORAGE_KEY = "naveen-resume-v8";
+const STORAGE_KEY = "naveen-resume-v9";
 
 const state = {
   data: null,
