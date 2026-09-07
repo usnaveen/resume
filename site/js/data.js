@@ -180,20 +180,12 @@ window.DEFAULT_RESUME = {
   skills: [
     { category: "Languages", items: "Python, SQL, C, C++, JavaScript" },
     {
-      category: "GenAI & Agentic",
-      items: "LangChain, LangGraph, RAG³, MCP², HuggingFace",
+      category: "ML & GenAI",
+      items: "PyTorch, scikit-learn, HuggingFace, LangChain, LangGraph, RAG³, MCP², NumPy / Pandas, Matplotlib, Gemini / OpenAI",
     },
     {
-      category: "ML & DL",
-      items: "PyTorch, scikit-learn, NumPy / Pandas, Matplotlib, Gemini / OpenAI",
-    },
-    {
-      category: "Backend & Data",
-      items: "FastAPI, PostgreSQL (pgvector), Neo4j, ChromaDB / Redis, Firestore",
-    },
-    {
-      category: "Cloud & Tooling",
-      items: "Docker, Google Cloud Run, Vertex AI, Git / GitHub, LangSmith",
+      category: "Backend & Cloud",
+      items: "FastAPI, PostgreSQL (pgvector), Neo4j, Redis / Firestore, Docker, Google Cloud Run, Vertex AI, Git / GitHub, LangSmith",
     },
   ],
   extras: [
